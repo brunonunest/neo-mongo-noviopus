@@ -11,9 +11,9 @@ client2 = pymongo.MongoClient(mongourlin)
 db = client.neo4jnodes
 db2 = client2.ats_prod
 
-#we have data for it but its different
+#we have data for it but its different, check with Karina
 collection = db.jobTitle.find()
 collection2 = db2["jobTitle"]
-collection2.drop()
-collection2 = db2["jobTitle"]
+#collection2.drop()
+#collection2 = db2["jobTitle"]
 x = collection2.insert_many(collection)
