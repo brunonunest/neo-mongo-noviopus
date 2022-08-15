@@ -2,8 +2,9 @@ import pymongo
 import ssl
 from decouple import config
 
-mongourlout = config('MONGO_URL')
-mongourlin = "mongodb+srv://novi_adm1n:UwgvuAW07CzzOD4W@production.orohg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+#STANDBY
+#mongourlout = config('MONGO_URL')
+#mongourlin = "mongodb+srv://novi_adm1n:UwgvuAW07CzzOD4W@production.orohg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 ssl._create_default_https_context = ssl._create_unverified_context
 mongolist = []
 client = pymongo.MongoClient(mongourlout)
