@@ -27,7 +27,7 @@ for k, v in allnodes.items():
             productionUse = obj['n']['productionUse']
             queryInput = "MERGE (n:User {id_:" + "'" + id_ + "'" + "}) "\
                         "SET n.email = " + "'" + email + "'" + ",n.firstname = " + "'" + firstname + "'" + ",n.id = " + "'" + id + "'" + ",n.lastname = " + "'" + lastname + "'" + ",n.password = " + "'" + password + "'" + ",n.productionUse = " + "'" + productionUse + "'" + " "
-            frun = graphInput.run(queryInput).data() 
+            frun = graphInput.run(queryInput)
 print("Done uploading User Nodes to Career")
 
 

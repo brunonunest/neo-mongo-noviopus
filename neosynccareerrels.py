@@ -23,10 +23,10 @@ for index in range(len(onrels)):
             id_ = str(obj['id_'])
             close = str(obj['r.close'])
             queryInput = "MATCH (n:" + labelStart + "),(n2:" + labelEnd + ") "\
-                        "WHERE n._id = " + startNode + " and n2._id = " + endNode + " "\
-                        "MERGE (n)-[r:Family]-(n2) "\
-                        "SET r.id_ = " + id_ + ", r.close = " + close + " "
-            frun = graphInput.run(queryInput).data() 
+                        "WHERE n.id_ = " + "'" + startNode + "'" + " and n2.id_ = " + "'" + endNode + "'" + " "\
+                        "MERGE (n)-[r:Family]->(n2) "\
+                        "SET r.id_ = " + "'" + id_ + "'" + ", r.close = " + "'" + close + "'" + " "
+            frun = graphInput.run(queryInput)
 print("Done Uploading User Relations to Career")
 
 
