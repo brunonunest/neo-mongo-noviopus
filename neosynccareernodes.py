@@ -26,14 +26,10 @@ for k, v in allnodes.items():
             password = str(obj['n']['password'])
             productionUse = obj['n']['productionUse']
             queryInput = "MERGE (n:User {id_:" + "'" + id_ + "'" + "}) "\
-                        "SET n.email = " + "'" + email + "'" + ",n.firstname = " + "'" + firstname + "'" + ",n.id = " + "'" + id + "'" + ",n.lastname = " + "'" + lastname + "'" + ",n.password = " + "'" + password + "'" + ",n.productionUse = " + productionUse + " "
+                        "SET n.email = " + "'" + email + "'" + ",n.firstname = " + "'" + firstname + "'" + ",n.id = " + "'" + id + "'" + ",n.lastname = " + "'" + lastname + "'" + ",n.password = " + "'" + password + "'" + ",n.productionUse = " + "'" + productionUse + "'" + " "
             frun = graphInput.run(queryInput).data() 
-print("Done uploading")
+print("Done uploading User Nodes to Career")
 
-#get data from main NV DB
-
-#manipulate data to be send to career neo4j DB
 
 #OUTPUT IS MAIN, INPUT IS CAREER (ALSO ONLY FOR READING)
-
 #NEVER forget the maindatabase is the only way to WRITE!

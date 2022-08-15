@@ -1,7 +1,7 @@
 from py2neo import Graph
 import pymongo
 import ssl
-from querydata import allrels
+from querydata import onrels
 from decouple import config
 
 mongourl = config('MONGO_URL')
@@ -13,9 +13,9 @@ graph = Graph(neo4jurl, password=neo4jpw)
 mongolist = []
 client = pymongo.MongoClient(mongourl)
 
-for index in range(len(allrels)):
-    nodelabel = allrels[index]["node"]
-    query = allrels[index]["query"]
+for index in range(len(onrels)):
+    nodelabel = onrels[index]["label"]
+    query = onrels[index]["query"]
     run = graph.run(query).data()
     for obj in run:
         mongolist.append(obj)
